@@ -1,0 +1,50 @@
+\documentclass[a4paper,11pt,answers]{exam}
+\usepackage{graphicx}
+\usepackage{ifpdf}
+\ifpdf
+   % put here packages only for the PDF:
+   \DeclareGraphicsExtensions{.pdf,.png,.jpg,.mps}
+   \usepackage{hyperref} 
+\else
+   % put here packages only for the DVI:
+\fi
+ 
+% put all the other packages here:
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel} 
+\usepackage{forloop} 
+\usepackage{amsfonts} 
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{ amssymb }
+%\usepackage{mystyle}
+
+\pagestyle{headandfoot}
+\renewcommand{\solutiontitle}{\noindent\textbf{Solución:}\enspace}
+\runningheadrule
+\runningheader{Ecuaciones Algebraicas}{Problemas}{
+\href{https://github.com/ub-struct-alg/ejercicios}{github.com/ub-struct-alg}
+}
+\runningfooter{}{Página \thepage\ de \numpages}{}
+
+\begin{document}
+\input{./tex/title.tex}
+\maketitle
+
+\tableofcontents
+\listoffigures
+\listoftables
+ 
+\newcounter{questionnumber}
+
+\newpage 
+\section{Grupos}
+\begin{questions}
+\forLoop[1]{1}{45}{questionnumber}{
+\input{./enunciados/\thequestionnumber.tex}
+\input{./soluciones/\thequestionnumber.tex}
+}
+\end{questions}
+
+ 
+\end{document}
